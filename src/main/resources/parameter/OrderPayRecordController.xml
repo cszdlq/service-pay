@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<controller>
+	<!-- 公有参数 -->
+	<parameter key="cp" type="INTEGER" maxLength="11"></parameter>
+	<parameter key="pz" type="INTEGER" maxLength="11"></parameter>
+	<parameter key="orderName" type="STRING" maxLength="32" ></parameter>
+	<parameter key="appId" type="STRING" maxLength="32" ></parameter>
+	<!-- 增加订单记录 -->	
+	<method url="orderPayRecord/saveOrderRecord" method="POST">
+		<parameter ref="orderName"></parameter>
+		<parameter key="orderSn" type="STRING" maxLength="32" ></parameter>
+		<parameter key="orderPrice" type="STRING" maxLength="32" ></parameter>
+		<parameter key="commodityUuid" type="STRING" maxLength="32" ></parameter>
+		<parameter ref="appId" must="false"></parameter>
+		<parameter key="payType" type="STRING" maxLength="32" ></parameter>
+		<parameter key="deviceType" type="STRING" maxLength="32" ></parameter>
+		<parameter key="userCode" type="STRING" maxLength="32" ></parameter>
+		<parameter key="buyType" type="STRING" maxLength="32" ></parameter>
+		<parameter key="isPay" type="STRING" maxLength="32" ></parameter>
+	</method>
+	
+	<!-- 查询订单记录：分页 -->
+	<method url="orderPayRecord/getOrderRecordList" method="POST">
+		<parameter ref="cp"></parameter>
+		<parameter ref="pz"></parameter>
+		<parameter ref="appId" must="false"></parameter>
+		<parameter ref="orderName" must="false"></parameter>
+	</method>
+</controller>

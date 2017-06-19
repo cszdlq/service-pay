@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<controller>
+	<!-- 公有参数 -->
+	<!-- 支付宝付款，产生预付款订单，保存此订单 -->	
+	<method url="alipay/saveOrderPay" method="POST">
+        <parameter key="appId" type="STRING" maxLength="32" must="false"></parameter>
+		<parameter key="buyType" type="INTEGER" maxLength="11"></parameter>
+        <parameter key="userCode" type="STRING" maxLength="32"></parameter>
+        <parameter key="commodityUuid" type="STRING" maxLength="32" ></parameter>
+        <parameter key="orderName" type="STRING" maxLength="128" ></parameter>
+        <parameter key="orderPrice" type="STRING" maxLength="32"></parameter>
+        <parameter key="deviceType" type="STRING" maxLength="32" must="false"></parameter>
+	</method>
+	
+	<method url="alipay/pay" method="POST">
+    </method>
+</controller>
